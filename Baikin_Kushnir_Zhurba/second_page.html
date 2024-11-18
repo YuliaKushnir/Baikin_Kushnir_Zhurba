@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/593c193946.js" crossorigin="anonymous"></script>
+    <title>SKYLINK</title>
+    <meta name="description" content="Flights tickets">
+</head>
+<body>
+
+    <!-- Перша секція -->
+
+    <div class="main-section">
+        <div class="container main-section__nav-container">
+            
+            <!-- Навігаційне меню -->
+            
+            <header class="main-section__header">
+                <a href="#"><img class="main-section__logo" src="/img/Logo.png" alt=""></a>
+            </header>
+            
+            <!-- Навігаційне меню -->
+            
+            <nav class="main-section__nav nav-menu">
+                <button class="nav-menu__toggle"><img src="./img/Menu.svg" alt="menu icon"></button>
+                <ul class="nav-menu__list ">
+                    <li class="nav-menu__list-item ">
+                        <a href="#"><img class="main-section__support" src="/img/Support.svg" alt=""></a>
+                        <a href="#" class="nav-menu__link text-inter400s16-black">Support</a></li>
+                    <li class="nav-menu__list-item">
+                        <a href="#"><img class="main-section__favorites" src="/img/Favourite.svg" alt=""></a>
+                        <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Favorites</a></li>
+                    <li class="nav-menu__list-item">
+                        <a href="#"><img class="main-section__flights" src="/img/Mytrips.svg" alt=""></a>
+                        <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">My flights</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Іконки справа в заголовку -->
+            
+            <div class="header-icons">
+                <a href="#"><img class="main-section__icon-heart" src="/img/Heart.svg" alt=""></a>
+                <a href="#"><img class="main-section__icon-map" src="/img/iconMap.svg" alt=""></a>
+                <a href="#"><img class="main-section__ellipse" src="/img/Ellipse 1.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="container main-section__content-container">
+            
+            <!-- ==========Лівий блок з інформацією по рейсам========== -->
+            
+            <div class="left-wrapper">
+                <div class="left-wrapper__flight-table">
+                    
+                    <!-- 1 рядок таблиці - куди летимо -->
+                    
+                    <div class="left-wrapper__destination">
+                        <div class="left-wrapper__destination-subframe">
+                            <div class="left-wrapper__destination-subframe_text">
+                                <p>Your trip to</p>
+                            </div>
+                            <div class="left-wrapper__destination-subframe_dep-city-var"></div>
+                            <div class="left-wrapper__destination-subframe_after-city-text"><p>-</p></div>
+                            <div class="left-wrapper__destination-subframe_destination-veriable">
+                            </div>
+                        </div>
+                        <button class="left-wrapper__button left-wrapper__button_blue">
+                            Change flights
+                        </button>
+                    </div>
+                    
+                    <!-- Рядок по вильоту: рейс та дата вильоту -->
+
+                    <div class="left-wrapper__departure-line">
+                        <div class="left-wrapper__departure-text text-inter-dark">
+                            <p>Departure</p>
+                        </div>
+                        <div class="left-wrapper__departure-flight-veriable text-inter-grey-SkylinkH3"></div>
+                        <div class="left-wrapper__departure-date-variable first-date text-inter-grey-SkylinkH3"></div>
+                        
+                    </div>
+
+                    <!-- Рядок: час та місто вильоту -->
+
+                    <div class="left-wrapper__departure-time">
+                        <div class="left-wrapper__departure-time-left">
+                            <div class="left-wrapper__departure-time-veriable text-montserrat-dark-SkylinkH2"></div>
+                            <div class="left-wrapper__departure-city-veriable text-montserrat-dark-SkylinkH2"></div>
+                        </div>
+                        <div class="left-wrapper__departure-arrow-section">
+                            <img src="/img/Arrow 1.svg" alt="flight direction">
+                            <div class="left-wrapper__departure-flight-duration-variable text-inter-blue-Skylink"></div>
+                        </div>
+                        <div class="left-wrapper__arrival-time-right">
+                            <div class="left-wrapper__arrival-time-veriable text-montserrat-dark-SkylinkH2"></div>
+                            <div class="left-wrapper__arrival-city-veriable text-montserrat-dark-SkylinkH2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Рядок: дата та місто вильоту -->
+
+                    <div class="left-wrapper__departure-date">
+                        <div class="left-wrapper__departure-left">
+                            <div class="left-wrapper__departure-date-variable second-date text-inter-grey-Skylink"></div>
+                            <div class="left-wrapper__departure-place-variable departure-place-first text-inter-grey-Skylink"></div>
+                        </div>
+                        <div class="left-wrapper__departure-right">
+                            <div class="left-wrapper__arrival-date-variable text-inter-grey-Skylink"></div>
+                            <div class="left-wrapper__arrival-place-variable text-inter-grey-Skylink"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Блок інформації по зворотньому рейсу --> 
+                    
+                    <div class="left-wrapper__return-line">
+                        <div class="left-wrapper__return-text text-inter-dark">
+                            <p>Return</p>
+                        </div>
+                        <div class="left-wrapper__return-flight-veriable text-inter-grey-SkylinkH3"></div>
+                        <div class="left-wrapper__return-date-variable return-date-first text-inter-grey-SkylinkH3"></div>
+                    </div>
+
+                    <!-- Рядок  по зворотньому рейсу: час та місто вильоту -->
+
+                    <div class="left-wrapper__return-time">
+                        <div class="left-wrapper__return-time-left">
+                            <div class="left-wrapper__return-time-veriable text-montserrat-dark-SkylinkH2"></div>
+                            <div class="left-wrapper__return-city-veriable text-montserrat-dark-SkylinkH2"></div>
+                        </div>
+                        <div class="left-wrapper__return-arrow-section">
+                            <img src="/img/Arrow 1.svg" alt="flight direction">
+                            <div class="left-wrapper__return-flight-duration-variable text-inter-blue-Skylink"></div>
+                        </div>
+                        <div class="left-wrapper__return-arrival-time-right">
+                            <div class="left-wrapper__return-arrival-time-veriable text-montserrat-dark-SkylinkH2"></div>
+                            <div class="left-wrapper__return-arrival-city-veriable text-montserrat-dark-SkylinkH2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Рядок  по зворотньому рейсу: дата та місто вильоту -->
+
+                    <div class="left-wrapper__return-date">
+                        <div class="left-wrapper__return-left">
+                            <div class="left-wrapper__return-date-variable return-date-second text-inter-grey-Skylink"></div>
+                            <div class="left-wrapper__return-place-variable text-inter-grey-Skylink"></div>
+                        </div>
+                        <div class="left-wrapper__return-right">
+                            <div class="left-wrapper__return-arrival-date-variable text-inter-grey-Skylink"></div>
+                            <div class="left-wrapper__return-arrival-place-variable text-inter-grey-Skylink"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- ==========Правий блок з інформацією по цінам========== -->
+
+            <div class="right-wrapper">
+                <div class="right-wrapper__price-table">
+                    <div class="right-wrapper__subtable">
+
+                        <!-- Price summary -->
+
+                        <p class="text-inter-dark price-summary">Price summary</p>
+                        <div class="right-wrapper__traveler text-inter-dark-Skylink19">
+                            <div class="right-wrapper__traveler-left-part">
+                                <p class="right-wrapper__traveler-text">Traveler:
+                                </p>
+                                <div class="right-wrapper__treveler-number-veriable"></div>
+                                <div class="right-wrapper__treveler-adult-veriable">
+                                </div>
+                            </div>
+                            <div class="right-wrapper__treveler-price-variable"></div>
+                        </div>
+                        <div class="right-wrapper__flight text-inter-dark-Skylink19">
+                            <p class="right-wrapper__flight-text">Flight
+                            </p>
+                            <div class="right-wrapper__flight-price-variable"></div>
+                        </div>
+                        <div class="right-wrapper__taxes text-inter-dark-Skylink19">
+                            <p class="right-wrapper__taxes-text">Taxes and fees</p>
+                            <div class="right-wrapper__taxes-price-variable"></div>
+                        </div>
+                        
+                        <!-- Check-in baggage -->
+                        
+                        <div class="right-wrapper__baggage text-inter-dark-Skylink19w500">
+                            <p>Check-in baggage</p>
+                        </div>
+                        <div class="right-wrapper__departure text-inter-dark-Skylink19">
+                            <p>Departure</p>
+                            <div class="right-wrapper__departure-bags">
+                                <div class="right-wrapper__departure-bags-variable"></div>
+                                <p>x bags</p>
+                            </div>
+                        </div>
+                        <div class="right-wrapper__return text-inter-dark-Skylink19">
+                            <p>Return</p>
+                            <div class="right-wrapper__return-bags">
+                                <div class="right-wrapper__return-bags-variable"></div>
+                                <p>x bags</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Add ones -->
+                        
+                        <div class="right-wrapper__add text-inter-dark-Skylink19w500">
+                            <p>Add ones</p>
+                        </div>
+                        <div class="right-wrapper__choice text-inter-dark-Skylink19">
+                            <p class="right-wrapper__choice-text">Total seat choice</p>
+                            <div class="right-wrapper__choice-price-variable"></div>
+                        </div>
+                        
+                        <!-- Flight total -->
+                        
+                        <div class="right-wrapper__total text-inter-dark">
+                            <p class="right-wrapper__total-text">Flight total</p>
+                            <div class="right-wrapper__total-price-variable"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========Друга секція з інформацією по пасажиру========== -->
+
+        <div class="container midle-section__content-container">
+            <div class="midle-wrapper">
+                <div class="midle-wrapper__table">
+                    <div class="midle-wrapper__passenger">
+                        <p class="text-montserrat-dark-SkylinkH2 choose-seats-text">Passenger 1</p>
+                    </div>
+                    
+                    <!-- Рядок з формами по пасажиру -->
+                    
+                    <div class="midle-wrapper__name">
+                        <form class="midle-wrapper__name-form" action="/" method="post">
+                            <div class="midle-wrapper__form-group">
+                            <input class="midle-wrapper__name-input" type="text" name="first-name" placeholder="First name">
+                            </div>
+                    
+                            <div class="midle-wrapper__form-group">
+                            <input class="midle-wrapper__name-input" type="text" name="middle-name" placeholder="Middle name (optional)">
+                            </div>
+                        
+                            <div class="midle-wrapper__form-group">
+                            <input class="midle-wrapper__name-input" type="text" name="last-name" placeholder="Last name">
+                            </div>
+                        </form> 
+                        <form class="midle-wrapper__gender-form" action="/" method="post">
+                            
+                            <!-- Gender -->
+                            
+                            <div class="midle-wrapper__gender-container">
+                                <select class="midle-wrapper__gender-select passenger-small-button" name="gender" id="gender">
+                                    <option value="" disabled selected>Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </form> 
+                        
+                        <!-- Date of birth -->
+
+                        <div class="midle-wrapper__birth">
+                            <p class="text-inter-grey-Skylink">Date of birth</p>
+                        </div>
+                        <div class="midle-wrapper__select-birth">
+                            <select class="midle-wrapper__month-select passenger-small-button" name="month" id="month">
+                                <option value="" disabled selected>Month</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                            </select>
+                            <select class="midle-wrapper__day-select passenger-small-button" name="day" id="day">
+                                <option value="" disabled selected>Day</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select class="midle-wrapper__year-select passenger-small-button" name="year" id="year">
+                                <option value="" disabled selected>Year</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                            </select>
+                            
+                            <!-- Кнопка Add another passenger -->
+                            
+                            <div class="middle-wrapper__button">
+                                <button class="middle-wrapper__change-button left-wrapper__button_blue">
+                                    Add another passenger
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==========Третя секція лівий блок========== -->
+
+        <div class="container lower-section__content-container">
+            <div class="lower-wrapper">
+
+                <div class="lower-wrapper__left-table">
+                    <p class="text-montserrat-dark-SkylinkH2 choose-seats-text">Choose your seats</p>
+                    
+                    <!-- Рядок напрямку вильоту та зворотнього рейсу-->
+                    
+                    <div class="directions-line">
+                        <div class="directions-line__departure text-inter33_400-blue">
+                            <div class="departure-city"></div>
+                            <p>-</p>
+                            <div class="arrival-city"></div>
+                        </div>
+                        <div class="directions-return text-inter-grey-SkylinkH3">
+                            <div class="return-city"></div>
+                            <p>-</p>
+                            <div class="return-arrival-city"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Кнопка Passenger 1 -->
+                    
+                    <div class="passenger1-row">
+                        <div class="passenger1-box">
+                            <button class="passenger1-box__button">
+                                Passenger 1
+                            </button>
+                        </div>
+                        
+                        <!-- Квадрат для відображення обраного місця -->
+                        
+                        <div id="selected-seat" class="selected-seat">
+
+                        </div>
+                    </div>
+                    
+                    <!-- Розяснення по кольорам місць: вільне/зайняте/обране -->
+                    <div class="color-description__container">
+                        <div class="color-description__row description-row1">
+                            <div class="available box1D">
+                                <p>1D</p>
+                            </div>
+                            <p>Available</p>
+                        </div>
+                        <div class="color-description__row description-row2">
+                            <div class="non-available box1D">
+                                <p>1D</p>
+                            </div>
+                            <p>Not available</p>
+                        </div>
+                        <div class="color-description__row description-row3">
+                            <div class="selected box1D">
+                                <p>1D</p>
+                            </div>
+                            <p>Selected</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ==========Третя секція правий блок з місцями========== -->
+                
+                <div class="lower-wrapper__right-table">
+                    <div class="seats">
+                        <div class="row1 row">
+                            <div class="seat" data-status="available">1A</div>
+                            <div class="seat" data-status="available">1B</div>
+                            <p>1</p>
+                            <div class="seat" data-status="available">1C</div>
+                            <div class="seat" data-status="occupied">1D</div>
+                        </div>
+                        <div class="row2 row">
+                            <div class="seat" data-status="available">2A</div>
+                            <div class="seat" data-status="available">2B</div>
+                            <p>2</p>
+                            <div class="seat" data-status="available">2C</div>
+                            <div class="seat" data-status="available">2D</div>
+                        </div>
+                        <div class="row3 row">
+                            <div class="seat" data-status="available">3A</div>
+                            <div class="seat" data-status="available">3B</div>
+                            <p>3</p>
+                            <div class="seat" data-status="available">3C</div>
+                            <div class="seat" data-status="occupied">3D</div>
+                        </div>
+                        <div class="row4 row">
+                            <div class="seat" data-status="occupied">4A</div>
+                            <div class="seat" data-status="available">4B</div>
+                            <p>4</p>
+                            <div class="seat" data-status="available">4C</div>
+                            <div class="seat" data-status="available">4D</div>
+                        </div>
+                        <div class="row5 row">
+                            <div class="seat" data-status="available">5A</div>
+                            <div class="seat" data-status="available">5B</div>
+                            <p>5</p>
+                            <div class="seat" data-status="available">5C</div>
+                            <div class="seat" data-status="available">5D</div>
+                        </div>
+                        <div class="row6 row">
+                            <div class="seat" data-status="available">6A</div>
+                            <div class="seat" data-status="available">6B</div>
+                            <p>6</p>
+                            <div class="seat" data-status="available">6C</div>
+                            <div class="seat" data-status="available">6D</div>
+                        </div>
+                        <div class="row7 row">
+                            <div class="seat" data-status="available">7A</div>
+                            <div class="seat" data-status="available">7B</div>
+                            <p>7</p>
+                            <div class="seat" data-status="available">7C</div>
+                            <div class="seat" data-status="available">7D</div>
+                        </div>
+                        <div class="row8 row">
+                            <div class="seat" data-status="available">8A</div>
+                            <div class="seat" data-status="available">8B</div>
+                            <p>8</p>
+                            <div class="seat" data-status="available">8C</div>
+                            <div class="seat" data-status="occupied">8D</div>
+                        </div>
+                        <div class="row9 row">
+                            <div class="seat" data-status="available">9A</div>
+                            <div class="seat" data-status="available">9B</div>
+                            <p>9</p>
+                            <div class="seat" data-status="available">9C</div>
+                            <div class="seat" data-status="available">9D</div>
+                        </div>
+                        <div class="row10 row">
+                            <div class="seat" data-status="available">10A</div>
+                            <div class="seat" data-status="available">10B</div>
+                            <p>10</p>
+                            <div class="seat" data-status="available">10C</div>
+                            <div class="seat" data-status="available">10D</div>
+                        </div>
+                        <div class="row11 row">
+                            <div class="seat" data-status="available">11A</div>
+                            <div class="seat" data-status="available">11B</div>
+                            <p>11</p>
+                            <div class="seat" data-status="available">11C</div>
+                            <div class="seat" data-status="available">11D</div>
+                        </div>
+                        <div class="row12 row">
+                            <div class="seat" data-status="available">12A</div>
+                            <div class="seat" data-status="available">12B</div>
+                            <p>12</p>
+                            <div class="seat" data-status="available">12C</div>
+                            <div class="seat" data-status="available">12D</div>
+                        </div>
+                        <div class="row13 row">
+                            <div class="seat" data-status="available">13A</div>
+                            <div class="seat" data-status="available">13B</div>
+                            <p>13</p>
+                            <div class="seat" data-status="available">13C</div>
+                            <div class="seat" data-status="available">13D</div>
+                        </div>
+                        <div class="row14 row">
+                            <div class="seat" data-status="available">14A</div>
+                            <div class="seat" data-status="available">14B</div>
+                            <p>14</p>
+                            <div class="seat" data-status="available">14C</div>
+                            <div class="seat" data-status="available">14D</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- ==========Четверта секція, блок оплати========== -->
+
+        <div class="container payment-section__content-container">
+            <div class="payment-wrapper">
+                <div class="payment-table">
+                    <div class="payment-method">
+                        <p class="text-montserrat-dark-SkylinkH2">Payment method</p>
+                    </div>
+                    <div class="select-method">
+                        <p class="text-inter-dark">Select a payment method</p>
+                    </div>
+                    <div class="payment-options">
+                        <button class="payment-button credit-card"><i class="fa-regular fa-credit-card"></i>Credit card</button>
+                        <button class="payment-button google-pay"><i class="fa-brands fa-google"></i>Google Pay</button>
+                        <button class="payment-button apple-pay"><i class="fa-brands fa-apple"></i>Apple Pay</button>
+                        <button class="payment-button paypal"><i class="fa-brands fa-paypal"></i>Paypal</button>
+                    </div>
+                    <div class="details-line">
+                        <p class="text-inter-dark">Credit card details</p>
+                    </div>
+
+                    <div class="details-payment-form">
+                        <div class="details-form">
+                          <input type="text" id="name-on-card" placeholder="Name on card" />
+                        </div>
+                        <div class="details-form">
+                          <input type="text" id="card-number" placeholder="Card number" />
+                        </div>
+                        <div class="details-form-row">
+                          <div class="expiration-line">
+                            <input type="text" id="expiration-date" placeholder="Expiration date" />
+                            <span class="expiration-format">MM/YY</span>
+                          </div>
+                          <div class="cvv-line">
+                            <div class="cvv-input">
+                              <input type="text" id="cvv" placeholder="CVV" />
+                              <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка Confirm and pay -->
+
+        <div class="container continue-button">
+            <button class="separate-button text-inter-grey-Skylink">
+                Confirm and pay
+            </button>
+        </div> 
+    </div>
+
+    <!-- ==========Footer ========== -->
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer-wrapper">
+                
+                <!-- 1 Стовпчик -->
+
+                <div class="footer-wrapper__1column">
+                    <a href="#"><img src="./img/Logo.png" alt="logo"></a>
+                    <div class="contacts text-inter-grey-Skylink">
+                        <p>123 Maple Avenue, Suite</p>
+                        <p>400, San Francisco, CA</p>
+                        <div class="mail">
+                            <a class="text-inter-grey-Skylink mail" href="mailto:sklink@gmail.com">sklink@gmail.com</a>
+                        </div>
+                    </div>
+                    <a class="legal-doc text-inter-grey-Skylink" href="#">Legal documents</a>
+                </div>
+                
+                <!-- 2 Стовпчик -->
+                
+                <div class="footer-wrapper__2column">
+                    <div class="policy">
+                        <a class="text-inter-dark-Skylink19" href="#">Shipping Policy</a>
+                        <a class="text-inter-dark-Skylink19" href="#">Support</a>
+                        <a class="text-inter-dark-Skylink19" href="#">FAQs</a>
+                        <a class="text-inter-dark-Skylink19" href="#">Warranty Terms</a>
+                    </div>
+                    <div class="privacy text-inter-grey-Skylink">
+                        <a class="text-inter-grey-Skylink" href="">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- 3 Стовпчик -->
+
+                <div class="footer-wrapper__3column">
+                    <div class="terms">
+                        <a class="text-inter-dark-Skylink19" href="#">Return Policy</a>
+                        <a class="text-inter-dark-Skylink19" href="#">Terms and Conditions of Sale</a>
+                        <a class="text-inter-dark-Skylink19" href="#">Terms os Use</a>
+                        <a class="text-inter-dark-Skylink19" href="#">Contact us</a>
+                    </div>
+                    <div class="notification text-inter-grey-Skylink">
+                        <a class="text-inter-grey-Skylink" href="">Push Notification Policy</a>
+                    </div>
+                </div>
+                
+                <!-- 4 Стовпчик з іконками -->
+
+                <div class="footer-wrapper__4column">
+                    <div class="icons">
+                        <div class="icons-row">
+                            <a href="#" target="" rel="referrer">
+                                <img src="./img/iMessage.svg" alt="Facebook Icon">
+                            </a>
+                            <a href="#" target="" rel="referrer">
+                                <img src="./img/YouTube.svg" alt="YouTube Icon">
+                            </a>
+                            <a href="#" target="" rel="referrer">
+                                <img src="./img/Vector.svg" alt="Telegram Icon">
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="LLC text-inter-grey-Skylink">
+                        <p>© LLC «Skylink»</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+        // ==========Змінні для блока left-wrapper==========
+
+        //+++Змінні по блоку вильоту+++
+        
+        // Оголошення змінної depCityVar для медіа-запиту max-width: 360px
+        var depCityVar = "Lisbon";
+        document.querySelector('.left-wrapper__destination-subframe_dep-city-var').textContent = depCityVar;
+
+        // Оголошення змінної destinationCityVariable
+        var destinationCityVariable = "Rome";
+        document.querySelector('.left-wrapper__destination-subframe_destination-veriable').textContent = destinationCityVariable;
+
+        // Оголошення змінної departureFlightVeriable
+        var departureFlightVeriable = "TAP Portugal TP832";
+        document.querySelector('.left-wrapper__departure-flight-veriable').textContent = departureFlightVeriable;
+
+        // Оголошення змінної departureDateVariable
+        var departureDateVariable = "Tue, 05 Nov";
+        document.querySelector('.first-date').textContent = departureDateVariable;
+
+        // Оголошення змінної departurTimeVeriable
+        var departurTimeVeriable = "7:20 am";
+        document.querySelector('.left-wrapper__departure-time-veriable').textContent = departurTimeVeriable;
+
+        // Оголошення змінної departureCityVeriable
+        var departureCityVeriable = "LIS";
+        document.querySelector('.left-wrapper__departure-city-veriable').textContent = departureCityVeriable;
+
+        // Оголошення змінної departureFlightDurationVariable
+        var departureFlightDurationVariable = "3h 50min";
+        document.querySelector('.left-wrapper__departure-flight-duration-variable').textContent = departureFlightDurationVariable;
+
+        // Оголошення змінної arrivalTimeVeriable
+        var arrivalTimeVeriable = "11:25 am";
+        document.querySelector('.left-wrapper__arrival-time-veriable').textContent = arrivalTimeVeriable;
+
+        // Оголошення змінної arrivalCityVeriable
+        var arrivalCityVeriable = "FCO";
+        document.querySelector('.left-wrapper__arrival-city-veriable').textContent = arrivalCityVeriable;
+
+        // Використовуємо змінну departureDateVariable вдруге
+        document.querySelector('.second-date').textContent = departureDateVariable;
+
+        // Оголошення змінної departurePlaceVariable
+        var departurePlaceVariable = "Lisboa, T1, Lisbon (Portugal)";
+        document.querySelector('.departure-place-first').textContent = departurePlaceVariable;
+
+        // Оголошення змінної arrivalDateVeriable
+        var arrivalDateVeriable = "Tue, 05 Nov";
+        document.querySelector('.left-wrapper__arrival-date-variable').textContent = arrivalDateVeriable;
+        
+        // Оголошення змінної arrivalPlaceVeriable
+        var arrivalPlaceVeriable = "Fumicino, T1, Rome (Italy)";
+        document.querySelector('.left-wrapper__arrival-place-variable').textContent = arrivalPlaceVeriable;
+
+        //+++Змінні по блоку зворотнього рейсу+++
+
+        // Оголошення змінної returnFlightVeriable
+        var returnFlightVeriable = "TAP Portugal TP837";
+        document.querySelector('.left-wrapper__return-flight-veriable').textContent = returnFlightVeriable;
+
+        // Оголошення змінної returnDateVariable
+        var returnDateVariable = "Fri, 08 Nov";
+        document.querySelector('.return-date-first').textContent = returnDateVariable;
+
+        // Оголошення змінної returnTimeVeriable
+        var returnTimeVeriable = "7:35 am";
+        document.querySelector('.left-wrapper__return-time-veriable').textContent = returnTimeVeriable;
+
+        // Оголошення змінної returnCityVeriable
+        var returnCityVeriable = "FCO";
+        document.querySelector('.left-wrapper__return-city-veriable').textContent = returnCityVeriable;
+
+        // Оголошення змінної returnFlightDurationVariable
+        var returnFlightDurationVariable = "3h 10min";
+        document.querySelector('.left-wrapper__return-flight-duration-variable').textContent = returnFlightDurationVariable;
+
+        // Оголошення змінної returnArrivalTimeVeriable
+        var returnArrivalTimeVeriable = "9:45 am";
+        document.querySelector('.left-wrapper__return-arrival-time-veriable').textContent = returnArrivalTimeVeriable;
+
+        // Оголошення змінної returnArrivalCityVeriable
+        var returnArrivalCityVeriable = "LIS";
+        document.querySelector('.left-wrapper__return-arrival-city-veriable').textContent = returnArrivalCityVeriable;
+
+        // Використовуємо змінну returnDateVariable вдруге
+        document.querySelector('.return-date-second').textContent = returnDateVariable;
+
+        // Оголошення змінної returnPlaceVariable
+        var returnPlaceVariable = "Fumicino, T1, Rome (Italy)";
+        document.querySelector('.left-wrapper__return-place-variable').textContent = returnPlaceVariable;
+
+        // Оголошення змінної returnArrivalDateVeriable
+        var returnArrivalDateVeriable = "Fri, 08 Nov";
+        document.querySelector('.left-wrapper__return-arrival-date-variable').textContent = returnArrivalDateVeriable;
+        
+        // Оголошення змінної returnArrivalPlaceVeriable
+        var returnArrivalPlaceVeriable = "Lisboa, T1, Lisbon (Portugal)";
+        document.querySelector('.left-wrapper__return-arrival-place-variable').textContent = returnArrivalPlaceVeriable;
+
+
+        // ==========Змінні для блока right-wrapper==========
+
+        // Оголошення змінної trevelerNumberVeriable
+        var trevelerNumberVeriable = "1";
+        document.querySelector('.right-wrapper__treveler-number-veriable').textContent = trevelerNumberVeriable;
+
+        // Оголошення змінної trevelerAdultVeriable
+        var trevelerAdultVeriable = "Adult";
+        document.querySelector('.right-wrapper__treveler-adult-veriable').textContent = trevelerAdultVeriable;
+
+        // Оголошення змінної trevelerPriceVeriable
+        var trevelerPriceVeriable = "$58.48";
+        document.querySelector('.right-wrapper__treveler-price-variable').textContent = trevelerPriceVeriable;
+
+        // Оголошення змінної flightPriceVeriable
+        var flightPriceVeriable = "$40.35";
+        document.querySelector('.right-wrapper__flight-price-variable').textContent = flightPriceVeriable;
+
+        // Оголошення змінної taxesPriceVeriable
+        var taxesPriceVeriable = "$18.13";
+        document.querySelector('.right-wrapper__taxes-price-variable').textContent = taxesPriceVeriable;
+
+        // Оголошення змінної departureBagsVeriable
+        var departureBagsVeriable = "1";
+        document.querySelector('.right-wrapper__departure-bags-variable').textContent = departureBagsVeriable;
+
+        // Оголошення змінної returnBagsVeriable
+        var returnBagsVeriable = "1";
+        document.querySelector('.right-wrapper__return-bags-variable').textContent = returnBagsVeriable;
+
+        // Оголошення змінної choicePriceVeriable
+        var choicePriceVeriable = "$0";
+        document.querySelector('.right-wrapper__choice-price-variable').textContent = choicePriceVeriable;
+
+        // Оголошення змінної totalPriceVeriable
+        var totalPriceVeriable = "$116.95";
+        document.querySelector('.right-wrapper__total-price-variable').textContent = totalPriceVeriable;
+
+
+        // ==========Змінні для блока lower-wrapper==========
+
+        // Використовуємо змінну departureCityVeriable для класу .departure-city
+        document.querySelector('.departure-city').textContent = departureCityVeriable;
+
+        // Використовуємо змінну arrivalCityVeriable для класу .arrival-city
+        document.querySelector('.arrival-city').textContent = arrivalCityVeriable;
+
+        // Використовуємо змінну arrivalCityVeriable для класу .return-city
+        document.querySelector('.return-city').textContent = arrivalCityVeriable;
+    
+        // Використовуємо змінну arrivalCityVeriable для класу .return-city
+        document.querySelector('.return-arrival-city').textContent = returnArrivalCityVeriable;
+
+
+        // ==========Нижня секція lower-wrapper правий блок з місцями==========
+        // Зміна кольору місця пасажира з розкладки та 
+        // дублювання обраного місця з рокладки до кнопки Passenger 1 злівого боку
+        
+        // Отримати місце та контейнер для обраного місця
+        const seats = document.querySelectorAll('.seat'); // Збираємо всі елементи місць
+        const selectedSeatsContainer = document.getElementById('selected-seat'); // Контейнер для дублювання
+        let selectedSeat = null; // Для збереження вибраного місця
+
+        // Додати слухачі до місць
+        seats.forEach((seat) => {
+            seat.addEventListener('click', () => {
+                const status = seat.getAttribute('data-status'); // Отримуємо статус місця
+                const seatNumber = seat.textContent; // Отримуємо текст місця
+
+                if (status === 'available') {
+                    // Якщо вже вибрано місце, скасувати вибір попереднього
+                    if (selectedSeat) {
+                        selectedSeat.setAttribute('data-status', 'available'); 
+                        const seatToRemove = selectedSeatsContainer.querySelector(
+                            `.seat[data-seat-number="${selectedSeat.getAttribute('data-seat-number')}"]`
+                        );
+                        if (seatToRemove) {
+                            seatToRemove.remove(); 
+                        }
+                    }
+
+                    // Встановити статус "selected" для нового місця
+                    seat.setAttribute('data-status', 'selected');
+
+                    // Видалити всі попередні дублікати в контейнері
+                    const allClones = selectedSeatsContainer.querySelectorAll('.seat');
+                    allClones.forEach(clone => {
+                        clone.remove(); // Видаляємо всі існуючі дублікати
+                    });
+
+                    const seatClone = document.createElement('div');
+                    seatClone.className = 'seat'; 
+                    seatClone.textContent = seatNumber; 
+                    seatClone.classList.add('selected-seat'); 
+
+                    // Оновлення стилів (для синього кольору)
+                    seatClone.style.backgroundColor = 'blue';
+                    seatClone.style.color = 'white';
+
+                    // Додаємо нову копію місця в контейнер
+                    selectedSeatsContainer.appendChild(seatClone);
+
+                    // Оновлюємо вибране місце
+                    selectedSeat = seat;
+                }
+            });
+        });
+
+        // ==========Четверта секція, блок оплати==========
+        // Управління кнопками оплати
+        // Отримуємо всі кнопки
+        const buttons = document.querySelectorAll('.payment-button');
+
+        // Забезпечуємо, що жодна кнопка не буде "активною" спочатку
+        buttons.forEach((btn) => btn.classList.remove('active'));
+
+        // Додаємо обробник кліку для кожної кнопки
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                // Знімаємо активний клас з усіх кнопок
+                buttons.forEach((btn) => btn.classList.remove('active'));
+                
+                // Додаємо активний клас лише до натиснутої кнопки
+                button.classList.add('active');
+            });
+        });
+
+
+        // ==========Дії для медіа-запиту max-width: 360px==========
+        // Показуємо/ховаємо меню для малих екранів
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.nav-menu__toggle');
+            const menuList = document.querySelector('.nav-menu__list');
+            
+            if (toggleButton && menuList) {
+                toggleButton.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Зупиняє поширення події, щоб клік по кнопці не закривав меню
+                    menuList.classList.toggle('show'); // Показуємо/ховаємо меню
+                });
+
+                // Закрити меню при кліку поза ним
+                document.addEventListener('click', function (event) {
+                    if (!menuList.contains(event.target) && !toggleButton.contains(event.target)) {
+                        menuList.classList.remove('show'); // Ховаємо меню, якщо клік поза меню
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
