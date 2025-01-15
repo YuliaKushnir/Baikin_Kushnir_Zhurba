@@ -35,7 +35,7 @@ def vote(request, question_id):
             "polls/detail.html",
             {
                 "question": question,
-                "error_message": "Ви не вибрали варіант",
+                "error_message": "Оберіть варіант",
             },
         )
     else:

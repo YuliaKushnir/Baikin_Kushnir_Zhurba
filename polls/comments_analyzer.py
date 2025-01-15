@@ -13,11 +13,18 @@ url = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
 dataset = tf.keras.utils.get_file("aclImdb_v1", url, untar=True, cache_dir='.', cache_subdir='')
 dataset_dir = os.path.join(os.path.dirname(dataset), 'aclImdb_v1', 'aclImdb')
 train_dir = os.path.join(dataset_dir, 'train')
+test_dir = os.path.join(dataset_dir, 'test')
 
-# Підготовка даних для тренування
+
+# Видалення додаткових папок
+remove_dir = os.path.join(train_dir, 'unsup')
+shutil.rmtree(remove_dir)
+
+# Дані для тренування
 batch_size = 32
 seed = 42
 
+# Створюємо набір перевірки
 raw_train_ds = tf.keras.utils.text_dataset_from_directory(
     train_dir,
     batch_size=batch_size,
@@ -26,6 +33,7 @@ raw_train_ds = tf.keras.utils.text_dataset_from_directory(
     seed=seed
 )
 
+# Створюємо набір даних для перевірки та тестування
 raw_val_ds = tf.keras.utils.text_dataset_from_directory(
     train_dir,
     batch_size=batch_size,
@@ -34,11 +42,15 @@ raw_val_ds = tf.keras.utils.text_dataset_from_directory(
     seed=seed
 )
 
-# Побудова словника для токенізації
+raw_test_ds = tf.keras.utils.text_dataset_from_directory(
+    test_dir,
+    batch_size=batch_size)
+
+# Функція стандартизації для видалення html
 def custom_standardization(input_data):
     lowercase = tf.strings.lower(input_data)
     stripped_html = tf.strings.regex_replace(lowercase, '<br />', ' ')
-    return tf.strings.regex_replace(stripped_html, f'[{re.escape(string.punctuation)}]', '')
+    return tf.strings.regex_replace(stripped_html, '[%s]' % re.escape(string.punctuation), '')
 
 max_features = 10000
 sequence_length = 250
@@ -50,58 +62,77 @@ vectorize_layer = layers.TextVectorization(
     output_sequence_length=sequence_length
 )
 
-# Вивчення словника на тренувальних даних
+# Адаптуємо методи попередньої обробки даних до набору даних для тренування
 train_text = raw_train_ds.map(lambda x, y: x)
 vectorize_layer.adapt(train_text)
 
-# Функція для векторизації вхідних даних
+# Функція для використання векторизації
 def vectorize_text(text, label):
     text = tf.expand_dims(text, -1)
     return vectorize_layer(text), label
 
+# Застосовуємо TextVectorization
 train_ds = raw_train_ds.map(vectorize_text)
 val_ds = raw_val_ds.map(vectorize_text)
+test_ds = raw_test_ds.map(vectorize_text)
 
 # Оптимізація роботи з даними
 AUTOTUNE = tf.data.AUTOTUNE
 
 train_ds = train_ds.cache().prefetch(buffer_size=AUTOTUNE)
 val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
+test_ds = test_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
 # Побудова моделі
+embedding_dim = 16
+
 model = tf.keras.Sequential([
-    layers.Embedding(max_features + 1, 16),
+    layers.Embedding(max_features, embedding_dim),
     layers.Dropout(0.2),
     layers.GlobalAveragePooling1D(),
     layers.Dropout(0.2),
-    layers.Dense(16, activation='relu'), # Додано новий шар
     layers.Dense(1, activation='sigmoid')
 ])
 
-model.compile(loss=losses.BinaryCrossentropy(from_logits=False),
+# Функція втрат
+model.compile(loss=losses.BinaryCrossentropy(),
               optimizer='adam',
-              metrics=[tf.metrics.BinaryAccuracy()])
+              metrics=[tf.metrics.BinaryAccuracy(threshold=0.5)])
 
 # Навчання моделі
+epochs = 10
 history = model.fit(
     train_ds,
     validation_data=val_ds,
-    epochs=10
+    epochs=epochs
 )
 
+# Оцінка моделі
+loss, accuracy = model.evaluate(test_ds)
+print("Loss: ", loss)
+print("Accuracy: ", accuracy)
+
+# Експортуємо модель
+export_model = tf.keras.Sequential([
+  vectorize_layer,
+  model,
+  layers.Activation('sigmoid')
+])
+
+export_model.compile(
+    loss=losses.BinaryCrossentropy(from_logits=False),
+    optimizer="adam",
+    metrics=['accuracy']
+)
+
+
 def analyze_sentiment(comment):
-    print(f"Original comment: {comment}")
+    print(f"Коментар: {comment}")
     comment = tf.expand_dims(comment, 0)
-    comment = vectorize_layer(comment)
-    print(f"Vectorized comment: {comment}")
-    prediction = model.predict(comment)
-    print(f"Raw prediction: {prediction}")
-    sentiment = tf.sigmoid(prediction).numpy()[0][0]
-    print(f"Sigmoid applied prediction: {sentiment}")
-    if sentiment > 0.5:
+    prediction = export_model.predict(comment)
+    if prediction > 0.61:
         return "Позитивний"
-    elif sentiment < 0.5:
+    elif prediction < 0.58:
         return "Негативний"
     else:
         return "Нейтральний"
-
