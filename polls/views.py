@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views import generic
 
 from .models import Choice, Question
+from .comments_analyzer import analyze_sentiment
 
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
@@ -23,6 +24,7 @@ class ResultsView(generic.DetailView):
     model = Question
     template_name = "polls/results.html"
 
+
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:
@@ -38,5 +40,9 @@ def vote(request, question_id):
         )
     else:
         selected_choice.votes = F("votes") + 1
+        comment = request.POST.get("comment", "")
+        selected_choice.comment = comment
+        sentiment = analyze_sentiment(comment)  # Аналіз настрою
+        print(f"Настрій коментаря: {sentiment}")  # Вивід результату для налагодження
         selected_choice.save()
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))

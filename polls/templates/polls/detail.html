@@ -8,6 +8,9 @@
             <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
         {% endfor %}
     </fieldset>
+    <label for="comment">Коментар:</label><br>
+    <textarea name="comment" id="comment" rows="4" cols="50"></textarea>
+    <br>
     <input type="submit" value="Vote">
     <br><br>
     <a href="{% url 'polls:index' %}">Повернутись на головну</a>
